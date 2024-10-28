@@ -1,7 +1,9 @@
 import { EN } from './en';
 import { RU } from './ru';
 
-export const LOCALES: Record<string, EN> = {
+const languages = ['en', 'ru'] as const;
+
+export const LOCALES: Record<(typeof languages)[number], EN> = {
 	ru: new RU(),
 	en: new EN(),
-};
+} as const;

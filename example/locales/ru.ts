@@ -6,4 +6,7 @@ export class RU extends EN {
 	msgs = {
 		message1: 'сообщение1',
 	} as EN['msgs'];
+	functions = {
+		functionMsg: (value: string) => `Значение: ${value}`,
+	};
 }

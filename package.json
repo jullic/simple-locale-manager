@@ -1,12 +1,13 @@
 {
 	"name": "simple-locale-manager",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"description": "simple locale manager",
-	"main": "index.js",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"keywords": [
 		"locale"
 	],
-	"author": "",
+	"author": "Alexander Lvov",
 	"license": "ISC",
 	"dependencies": {
 		"deepmerge": "^4.3.1"
