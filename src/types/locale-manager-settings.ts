@@ -1,4 +1,9 @@
 export interface ILocaleManagerSettings {
-	safe: boolean;
-	findOutsideFallback: boolean;
+	deepMergeWithFallback?: boolean;
+	/**  FOR UNION LOCALES TYPE */
+	findOutsideFallback?: boolean;
 }
+
+const b: ILocaleManagerSettings = {
+	findOutsideFallback: false,
+};

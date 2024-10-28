@@ -4,24 +4,27 @@ import { Path } from '../types';
 import { get } from '../libs';
 import { ILocaleManagerSettings } from '../types/locale-manager-settings';
 
+const baseSettings: ILocaleManagerSettings = {
+	findOutsideFallback: false,
+	deepMergeWithFallback: true,
+};
+
 export class LocaleManager<
 	MESSAGES,
 	LOCALE extends string,
 	FALLBACK extends LOCALE
 > {
-	private static instance: LocaleManager<any, any, any> | null = null;
+	protected static instance: LocaleManager<any, any, any> | null = null;
 
 	locales: Record<LOCALE, MESSAGES>;
-	private readonly fallback: LOCALE;
+	protected readonly fallback: LOCALE;
 
 	constructor(
 		locales: Record<LOCALE, MESSAGES>,
 		fallback?: FALLBACK,
-		private readonly settings: ILocaleManagerSettings = {
-			findOutsideFallback: false,
-			safe: true,
-		}
+		private readonly settings: ILocaleManagerSettings = baseSettings
 	) {
+		this.settings = deepmerge(baseSettings, settings);
 		const fallbackKey = fallback
 			? fallback
 			: (Object.keys(locales)[0] as keyof typeof locales);
@@ -32,7 +35,7 @@ export class LocaleManager<
 			MESSAGES
 		>;
 		for (const key of Object.keys(locales)) {
-			if (!settings.safe) {
+			if (!this.settings.deepMergeWithFallback) {
 				break;
 			}
 			currentLocales[key as keyof typeof locales] = deepmerge(
