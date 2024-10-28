@@ -1,12 +1,16 @@
 {
 	"name": "simple-locale-manager",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "simple locale manager",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"locale"
 	],
+	"repository": {
+		"url": "https://github.com/jullic/simple-locale-manager",
+		"type": "git"
+	},
 	"author": "Alexander Lvov",
 	"license": "MIT",
 	"dependencies": {
