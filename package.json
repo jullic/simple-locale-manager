@@ -1,0 +1,17 @@
+{
+	"name": "simple-locale-manager",
+	"version": "0.0.1",
+	"description": "simple locale manager",
+	"main": "index.js",
+	"keywords": [
+		"locale"
+	],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"deepmerge": "^4.3.1"
+	},
+	"devDependencies": {
+		"@types/deepmerge": "^2.2.3"
+	}
+}
