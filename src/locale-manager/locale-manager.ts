@@ -31,7 +31,7 @@ export class LocaleManager<MESSAGES, LOCALE extends string, FALLBACK extends LOC
 
 	public static getInstance<MESSAGES, LOCALE extends string, FALLBACK extends LOCALE>(
 		locales: Record<LOCALE, MESSAGES>,
-		fallback?: LOCALE,
+		fallback?: FALLBACK,
 	): LocaleManager<MESSAGES, LOCALE, FALLBACK> {
 		if (!LocaleManager.instance) {
 			LocaleManager.instance = new LocaleManager(locales, fallback);

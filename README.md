@@ -37,7 +37,7 @@ export const LOCALES: Record<(typeof languages)[number], EN> = {
 	en: new EN(),
 } as const;
 
-const localeManager = new LocaleManager(LOCALES, 'en');
+const localeManager = LocaleManager.getInstance(LOCALES, 'en');
 
 // STRINGS
 console.log(localeManager.get('hello'), localeManager.get('world'));

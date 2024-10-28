@@ -1,11 +1,14 @@
 {
 	"name": "simple-locale-manager",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "simple locale manager",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"keywords": [
-		"locale"
+		"locale",
+		"small",
+		"internalization",
+		"typescript"
 	],
 	"repository": {
 		"url": "https://github.com/jullic/simple-locale-manager",
